@@ -2,7 +2,10 @@
 
 ## Overview
 
-This repository contains Python code for sentiment analysis on YouTube comments using PyTorch, transformers library, and Google's YouTube Data API v3. The project aims to analyze sentiments expressed in comments on a specific YouTube video and visualize the sentiment distribution through a pie chart. 
+# YouTube Sentiment Analysis
+
+This Python project utilizes PyTorch, transformers, and Google's YouTube Data API v3 to perform sentiment analysis on comments from a specified YouTube video, using the [DistilBERT model fine-tuned for multilingual sentiment analysis](https://huggingface.co/lxyuan/distilbert-base-multilingual-cased-sentiments-student). The sentiment distribution is presented through a pie chart visualization.
+
 
 **I ran three youtube music videos through the program:**
 1. Kanye West - Bound 2 : https://www.youtube.com/watch?v=BBAtAM7vtgc&ab_channel=KanyeWestVEVO
@@ -49,3 +52,12 @@ df = get_youtube_comments_df(video_id, max_results=100)
 # Visualize sentiment distribution
 # ... (pie chart generation)
 ```
+## Limitations:
+
+1. Limited Sample Size due to YouTube API Restrictions
+The YouTube Data API restricts the retrieval of comments to a maximum of 100 per request. Consequently, the project's sample size might be limited, potentially affecting the representativeness of the sentiment analysis. To mitigate this, consider strategies such as collecting comments from multiple API requests or focusing on videos with higher comment activity.
+
+2. Model Reliability
+Occasionally, the sentiment analysis model may fail to accurately predict sentiments for certain comments. As with any machine learning model, the predictions are based on the data it was trained on and might not generalize perfectly to all comment types or languages. Users should be aware that inaccuracies or misclassifications may occur, impacting the overall analysis.
+
+Users can improve the analysis by aggregating results from multiple videos or refining the model with more diverse and extensive training data for enhanced performance across various comment types and languages.
