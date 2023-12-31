@@ -1,6 +1,3 @@
-# YouTube Sentiment Analysis
-
-## Overview
 
 # YouTube Sentiment Analysis
 
